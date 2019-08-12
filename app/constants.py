@@ -1,5 +1,6 @@
 class Constants:
-    NAME = "Zach Schumacher"
+    FIRST_NAME = "Zach"
+    NAME = f"{FIRST_NAME} Schumacher"
     # currently only supports syntax highlighting for strings, tuples and list.  All items in a collection currently
     # only green.
     TERMINAL_MAPPING = {
@@ -12,7 +13,8 @@ class Constants:
         "Zach.education": ("BSB Information Systems Technology", "University of Kansas")
     }
     NUM_TERMINAL_COMMANDS = len(TERMINAL_MAPPING)
-    EMAIL_LINK = "mailto:zschu15@gmail.com"
+    EMAIL_ADDRESS = "zschu15@gmail.com"
+    EMAIL_LINK = f"mailto:{EMAIL_ADDRESS}"
     RESUME_FILENAME = "ZachResume.pdf"
 
     LINKS = {

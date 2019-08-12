@@ -1,45 +1,57 @@
+{% import 'terminal.jinja' as terminal_formatting %}
+
 <div id="bar">
     <div id="red">    </div>
     <div id="yellow">   </div>
     <div id="green">   </div>
 </div>
+
 <div id="screen">
     <p class="font">
-        <span class="caret">>>> </span>
-        <span class="keyword">from</span>
+        {{ terminal_formatting.caret() }}
+        {{ terminal_formatting.keyword('from') }}
         devs
-        <span class="keyword"> import</span>
-        Zach
+        {{ terminal_formatting.keyword('import') }}
+        {{ constants.FIRST_NAME }}
+    </p>
+
+    <p class="font">
+        {{ terminal_formatting.caret() }}{{ constants.FIRST_NAME }}.email<br>
+        {{ terminal_formatting.link(constants.EMAIL_LINK, constants.EMAIL_ADDRESS) }}
     </p>
 
     {% for command, value in constants.TERMINAL_MAPPING.items() %}
-        <p class="font">
-            <span class="caret">>>> </span>{{ command }}<br>
 
-            {% if isinstance(value, list) or isinstance(value, tuple) %}
+        <p class="font">
+            {{ terminal_formatting.caret() }}{{ command }}<br>
+
+            {% set islist = isinstance(value, list)  -%}
+            {% set istuple = isinstance(value, tuple) -%}
+
+            {% if islist or istuple %}
 
                 {% for index, i in enumerate(value, 1) %}
 
                     {% if index == 1 %}
-                        <span class="bracket">{{ '[' if isinstance(value, list) else '(' }}</span><span class="string">{{ i }}, </span>
+                        {{ terminal_formatting.choose_bracket(islist=islist) }}{{ terminal_formatting.string(i) }}{{ terminal_formatting.comma() }}
                     {% elif index == len(value) %}
-                        <span class="string">{{ i }}</span><span class="bracket">{{ ']' if isinstance(value, list) else ')' }}</span>
+                        {{ terminal_formatting.string(i) }}{{ terminal_formatting.choose_bracket(open=False, islist=islist) }}
                     {% else %}
-                        <span class="string">{{ i }}, </span>
+                        {{ terminal_formatting.string(i) }}{{ terminal_formatting.comma() }}
                     {% endif %}
 
                 {% endfor %}
 
             {% else %}
-                <span class="string">{{ value }}</span>
+                {{ terminal_formatting.string(value) }}
 
             {% endif %}
-
         </p>
+
     {% endfor %}
 
     <p class="font">
-        <span class="caret">>>> </span><span class="blinking-cursor">|</span>
+       {{ terminal_formatting.caret() }}<span class="blinking-cursor">|</span>
     </p>
 
 </div>
