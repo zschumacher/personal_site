@@ -1,0 +1,45 @@
+<div id="bar">
+    <div id="red">    </div>
+    <div id="yellow">   </div>
+    <div id="green">   </div>
+</div>
+<div id="screen">
+    <p class="font">
+        <span class="caret">>>> </span>
+        <span class="keyword">from</span>
+        devs
+        <span class="keyword"> import</span>
+        Zach
+    </p>
+
+    {% for command, value in constants.TERMINAL_MAPPING.items() %}
+        <p class="font">
+            <span class="caret">>>> </span>{{ command }}<br>
+
+            {% if isinstance(value, list) or isinstance(value, tuple) %}
+
+                {% for index, i in enumerate(value, 1) %}
+
+                    {% if index == 1 %}
+                        <span class="bracket">{{ '[' if isinstance(value, list) else '(' }}</span><span class="string">{{ i }}, </span>
+                    {% elif index == len(value) %}
+                        <span class="string">{{ i }}</span><span class="bracket">{{ ']' if isinstance(value, list) else ')' }}</span>
+                    {% else %}
+                        <span class="string">{{ i }}, </span>
+                    {% endif %}
+
+                {% endfor %}
+
+            {% else %}
+                <span class="string">{{ value }}</span>
+
+            {% endif %}
+
+        </p>
+    {% endfor %}
+
+    <p class="font">
+        <span class="caret">>>> </span><span class="blinking-cursor">|</span>
+    </p>
+
+</div>
