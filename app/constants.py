@@ -4,7 +4,7 @@ class Constants:
     # currently only supports syntax highlighting for strings, tuples and list.  All items in a collection currently
     # only green.
     TERMINAL_MAPPING = {
-        "Zach.current_location": '"Kansas City, Missouri"',
+        "Zach.current_location": 'Kansas City, Missouri',
         "Zach.job": ("Software Engineer", "Quest Analytics"),
         "Zach.skills": [
             "python", "flask", "celery", "docker", "sql", "informatica", "ssis", "java", "git", "subversion"
