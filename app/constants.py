@@ -4,12 +4,10 @@ class Constants:
     # currently only supports syntax highlighting for strings, tuples and list.  All items in a collection currently
     # only green.
     TERMINAL_MAPPING = {
-        "Zach.current_location": 'Kansas City, Missouri',
-        "Zach.job": ("Software Engineer", "Quest Analytics"),
-        "Zach.skills": [
-            "python", "flask", "celery", "docker", "sql", "informatica", "ssis", "java", "git", "subversion"
-        ],
-        "Zach.interests": ["video games", "board games", "traveling", "coding", "kayaking"],
+        "Zach.current_location": ("New York", "New York"),
+        "Zach.job": ("Senior Software Engineer", "SimpleBet"),
+        "Zach.skills": ["python", "flask", "celery", "docker", "sql", "pyspark", "java", "git", "subversion"],
+        "Zach.interests": ["sports", "video games", "board games", "traveling", "coding", "kayaking"],
         "Zach.education": ("BSB Information Systems Technology", "University of Kansas")
     }
     NUM_TERMINAL_COMMANDS = len(TERMINAL_MAPPING)
