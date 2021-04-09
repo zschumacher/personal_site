@@ -1,4 +1,6 @@
-from app import app, render_template, Constants
+from app import app
+from flask import render_template
+from app.constants import Constants
 
 
 @app.route('/')
