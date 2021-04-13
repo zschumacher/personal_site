@@ -1,6 +1,3 @@
-from pathlib import Path
-
-
 class Constants:
     FIRST_NAME = "Zach"
     NAME = f"{FIRST_NAME} Schumacher"
@@ -8,8 +5,8 @@ class Constants:
     # only green.
     TERMINAL_MAPPING = {
         "Zach.current_location": ("New York", "New York"),
-        "Zach.job": ("Senior Software Engineer", "SimpleBet"),
-        "Zach.skills": ["python", "flask", "celery", "docker", "sql", "pyspark", "java", "git", "subversion"],
+        "Zach.job": ("Senior Manager, Data Engineering", "SimpleBet"),
+        "Zach.skills": ["python", "flask", "django", "celery", "sql", "pyspark", "git", "golang"],
         "Zach.interests": ["sports", "video games", "board games", "traveling", "coding", "kayaking"],
         "Zach.education": ("BSB Information Systems Technology", "University of Kansas")
     }
