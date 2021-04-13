@@ -3,7 +3,7 @@ install:
 	poetry install
 
 freeze:
-	poetry run -m app.freezer
+	poetry run python -m app.freezer
 
 serve:
 	poetry run flask run
