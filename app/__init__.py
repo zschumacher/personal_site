@@ -1,6 +1,5 @@
-from flask import Flask, url_for, render_template
-from .constants import Constants
+from flask import Flask
 
 app = Flask(__name__)
-
+app.config["FREEZER_RELATIVE_URLS"] = True
 from app import routes
